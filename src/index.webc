@@ -2,3 +2,10 @@
 layout: "layout.webc"
 ---
 <h1>Food For Free</h1>
+
+<h2>Recipes</h2>
+<script webc:type="render" webc:is="template">
+	function render() {
+		return `<pre>${JSON.stringify(this.recipes, null, 2)}</pre>`;
+	}
+</script>
