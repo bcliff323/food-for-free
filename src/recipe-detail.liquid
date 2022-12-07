@@ -1,0 +1,25 @@
+---
+pagination:
+    data: recipes
+    size: 1
+    alias: recipe
+permalink: "recipe/{{recipe.title | slug}}/"
+---
+<h1>{{recipe.title}}</h1>
+<p>{{recipe.author}}</p>
+<ul>
+    {% for tag in recipe.tags %}
+        <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
+<p>{{recipe.description}}</p>
+<ul>
+    {% for ingredient in recipe.ingredients %}
+        <li>{{ ingredient }}</li>
+    {% endfor %}
+</ul>
+<ul>
+    {% for step in recipe.steps %}
+        <li>{{ step }}</li>
+    {% endfor %}
+</ul>
