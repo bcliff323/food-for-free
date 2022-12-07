@@ -4,7 +4,12 @@
   "description": "Recipe collection tool build with Eleventy and Contentful",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./_site",
+    "build:css": "npx tailwindcss -i ./src/css/styles.css -o ./src/css/styles.min.css --minify",
+    "build": "npm run build:css && npm run clean && eleventy",
+    "watch:tailwind": "npx tailwindcss -i ./src/css/styles.css -o ./src/css/styles.out.css --watch",
+    "watch:11ty": "npm run watch:tailwind & eleventy --watch --serve"
   },
   "repository": {
     "type": "git",
