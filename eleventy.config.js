@@ -8,7 +8,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/css/styles.min.css");
 
 	return {
-		// These are all optional, defaults are shown:
 		dir: {
 			input: "src/",
 			includes: "_includes",

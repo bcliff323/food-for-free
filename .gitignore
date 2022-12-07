@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# 11ty
+_site
+
+# tailwind
+src/css/styles.min.css
