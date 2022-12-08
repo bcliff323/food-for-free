@@ -1,4 +1,5 @@
 const contentful = require("contentful");
+const slugify = require("slugify");
 
 const client = contentful.createClient({
 	space: process.env.CTFL_SPACE,
@@ -10,6 +11,7 @@ module.exports = async () => {
 		.then(function (response) {
 			return response.items.map(recipe => ({
 				tags: recipe.metadata.tags.map(t => t.sys.id),
+				url: `/recipe/${slugify(recipe.fields.title).toLowerCase()}`,
 				id: recipe.sys.id,
 				createdAt: recipe.sys.createdAt,
 				updatedAt: recipe.sys.updatedAt,
